@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'https://esm.sh/uuid';
 
 export async function generateIcs(){
 
-    const response = await fetch('../data/ispiti.json');
+    const response = await fetch('data/ispiti.json');
     const events = await response.json();
 
     const now = new Date();
