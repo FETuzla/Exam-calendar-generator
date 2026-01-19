@@ -40,7 +40,7 @@ export async function generateIcs(){
     const icsString = ics.join('\r\n');
 
     const blob = new Blob([icsString], {
-        type: 'text'
+        type: 'text/calendar'
     });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
