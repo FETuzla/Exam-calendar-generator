@@ -134,6 +134,9 @@ btnAdd.addEventListener("click", () => {
     if(selectedSubjects.includes(selected)){
         return;
     }
+    if(selectedSubject.length === 0){
+        return;
+    }
 
     window.selectedSubjects.push(selected);
     List.innerText = "Odabrano: " + selectedSubjects.join(", ");

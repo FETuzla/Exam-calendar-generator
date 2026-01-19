@@ -92,9 +92,10 @@ h1 {
     }
     h1 {
         width: 100%;
+        font-size: 24px;
+        margin-top: 20px;
     }
-    .flexbox, 
-    #list {
+    .flexbox, #list {
         margin-left: 5%;
         margin-right: 5%;
     }
@@ -106,17 +107,10 @@ h1 {
         gap: 15px;
     }
 
-    #nameDropdown, 
-    #btnAdd, 
-    #btnGenerate {
+    #nameDropdown, #btnAdd, #btnGenerate {
         width: 100%;
         font-size: 18px;
         padding: 12px;
         box-sizing: border-box;
-    }
-
-    h1 {
-        font-size: 24px;
-        margin-top: 20px;
     }
 }
