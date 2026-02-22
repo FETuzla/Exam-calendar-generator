@@ -1,5 +1,8 @@
 Web tool that parses data from exam schedule and generates standardized .ics file.
 
+# Site is live at:
+
+https://senadm02.github.io/Exam-calendar-generator/
 
 # files
 

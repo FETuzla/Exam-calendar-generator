@@ -128,20 +128,52 @@ subjects.forEach(sub => {
     dropdown.add(option);
 });
 
+function renderList() {
+    List.innerHTML = "";
+
+    if(window.selectedSubjects.length > 0){
+        const title = document.createElement("span");
+        title.id = "listTitle";
+        title.innerText = "Odabrano:";
+        title.style.width = "100%";
+        List.appendChild(title);
+    }else {
+        return;
+    }
+
+    window.selectedSubjects.forEach((subject, index) => {
+        const item = document.createElement("div");
+        item.className = "selected-item";
+
+        const text = document.createElement("span");
+        text.innerText = subject;
+
+        const removeBtn = document.createElement("button");
+        removeBtn.innerText = "Ukloni";
+        
+        removeBtn.onclick = () => {
+            window.selectedSubjects.splice(index, 1);
+            renderList();
+        };
+
+        item.appendChild(text);
+        item.appendChild(removeBtn);
+        List.appendChild(item);
+    });
+}
+
 btnAdd.addEventListener("click", () => {
     const selected = dropdown.value;
-
-    if(selectedSubjects.includes(selected)){
-        return;
-    }
-    if(selected === ""){
-        return;
-    }
+    if (!selected || window.selectedSubjects.includes(selected)) return;
 
     window.selectedSubjects.push(selected);
-    List.innerText = "Odabrano: " + selectedSubjects.join(", ");
-})
+    renderList();
+});
 
 btnGenerate.addEventListener("click", () => {
+    if (window.selectedSubjects.length === 0) {
+        alert("Molimo odaberite bar jedan predmet.");
+        return;
+    }
     generateIcs();
 });

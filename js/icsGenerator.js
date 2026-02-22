@@ -9,13 +9,15 @@ export async function generateIcs(){
     const stringNow= now.toISOString();
     const created = stringNow.replace(/[-:]/g, '').slice(0,-5) + 'Z';
 
+    const filteredEvents = events.filter(e => window.selectedSubjects.includes(e.event));
+
     let ics = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
         "PRODID:-//icsgenerator//EN"
     ];
 
-    events.forEach(event =>{
+    filteredEvents.forEach(event =>{
         selectedSubjects.forEach(subject => {
             if(event.event == subject){
                 const uid = uuidv4();
