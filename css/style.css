@@ -114,6 +114,7 @@ button:active {
     width: 95%;
     display: flex;
     flex-direction: column;
+    gap: 5px;
     color: white;
     font-size: 18px;
 
@@ -146,6 +147,7 @@ button:active {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 #listTitle {
@@ -190,8 +192,16 @@ button:active {
         width: 100%;
     }
     #list {
-        font-size: 13px;
+        font-size: 16px;
         text-align: left;
+    }
+    .selected-item span {
+        min-height: 20px;
+        font-size: 16px;
+    }
+    #listTitle {
+        text-align: center;
+        font-size: 18px;
     }
     #nameDropdown {
         width: 100%;
