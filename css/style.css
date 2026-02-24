@@ -7,12 +7,10 @@ html, body {
 
 body {
     background: #686c43;
-}
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
-.main {
-    overflow: auto;
-    min-height: 100%;
-    width: 100%;
     background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../assets/images/testbg.avif");
 	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../assets/images/testbg.avif");
 	background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../assets/images/testbg.avif");
@@ -21,11 +19,16 @@ body {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
 
+.main {
+    overflow: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 	text-align: center;
+    flex: 1;
 }
 
 .info, h1, p{
@@ -154,17 +157,15 @@ button:active {
     margin-bottom: 10px;
 }
 
-.footer {
-    width: 100%;
-    padding: 2px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0,0,0,0.2);
+footer {
+    height: 16px;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 2px;
+    background: rgba(0,0,0,0.2);
     color: white;
-    font-size: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    backdrop-filter: blur(5px);
+
+    margin: 0;
 }
 
 .footer img {
@@ -213,5 +214,10 @@ button:active {
     button, .selected-item button {
         width: 50px;
         padding: 2px;
+    }
+    footer {
+        padding: 1px;
+        height: 12px;
+        font-size: 10px;
     }
 }
