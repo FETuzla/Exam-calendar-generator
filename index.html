@@ -1,41 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="assets/images/icon.png">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/images/icon.png" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Generator rasporeda ispita</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main">
-        <div class="info">
-            <h1>Dodavanje ispita u kalendar</h1>
-            <p>Odaberi predmete čije ispite zelis ubaciti u kalendar</p>
-            <p>Tipka "preuzmi" generira .ics file, koji importuje sve ispite u kalendar aplikaciju</p>
-        </div>
-        
-            <div class="main-content">
-                <h1>Odaberi predmete:</h1>
-                <div class="selectorDiv">
-                    <select id="nameDropdown">
-                        <option value="">Odaberi</option>
-                    </select>
+      <div class="nav-menu">
+        <p>≡</p>
+      </div>
+      <div class="side-overlay" id="sideOverlay"></div>
 
-                    <button id="btnAdd">Dodaj</button>
-                </div>
-                
-                <div id="list" class="selected-subjects-container"></div>
-                
-                <button id="btnGenerate">Preuzmi</button>     
-            </div>
+      <aside class="side-menu" id="sideMenu">
+        <ul id="menuList">
+          <!-- Pages will be inserted here dynamically -->
+        </ul>
+      </aside>
+      <div class="info">
+        <h1>Dodavanje ispita u kalendar</h1>
+        <p>Odaberi predmete čije ispite zelis ubaciti u kalendar</p>
+        <p>
+          Tipka "preuzmi" generira .ics file, koji importuje sve ispite u
+          kalendar aplikaciju
+        </p>
+      </div>
+
+      <div class="main-content">
+        <h1>Odaberi predmete:</h1>
+        <div class="selectorDiv">
+          <select id="nameDropdown">
+            <option value="">Odaberi</option>
+          </select>
+
+          <button id="btnAdd">Dodaj</button>
+        </div>
+
+        <div id="list" class="selected-subjects-container"></div>
+
+        <button id="btnGenerate">Preuzmi</button>
+      </div>
     </div>
-    <footer>
-        Community project by FET students
-    </footer>
-    
-    
+    <footer>Community project by FET students</footer>
+
     <script type="module" src="js/index.js"></script>
     <script type="module" src="js/icsGenerator.js"></script>
-</body>
+  </body>
 </html>
