@@ -182,6 +182,7 @@ const menuOpenButton = document.querySelector(".nav-menu p");
 const sideMenu = document.getElementById("sideMenu");
 const sideOverlay = document.getElementById("sideOverlay");
 const menuList = document.getElementById("menuList");
+const closeSide = document.getElementById("closeSideBtn")
 
 const helpDropdown = document.getElementById("help-dropdown");
 const closeHelp = document.getElementById("closeHelp");
@@ -231,6 +232,11 @@ menuOpenButton.addEventListener("click", toggleMenu);
 
 sideOverlay.addEventListener("click", () => {
   menuOpen = false;
+  sideMenu.classList.remove("open");
+  sideOverlay.classList.remove("open");
+});
+
+closeSide.addEventListener("click", () => {
   sideMenu.classList.remove("open");
   sideOverlay.classList.remove("open");
 });

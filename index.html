@@ -17,16 +17,16 @@
         <div class="nav-links">
           <div class="help-container">
             <button class="nav-help-btn" id="helpBtn">
-              <span class="desktop-text">Upustvo</span>
+              <span class="desktop-text">Uputstvo</span>
               <span class="mobile-text">?</span>
             </button>
             <div class="help-dropdown" id="help-dropdown">
               <h3>Upustvo</h3>
               <ul>
-                <li><strong>Preuzmi</strong> generiše .ics file</li>
-                <li><strong>ics file</strong> importuje sve ispite u kalendar aplikaciju</li>
+                <li><strong>Dodaj:</strong> Dodaje sve ispitne rokove za taj predmet</li>
+                <li><strong>Import u kalendar:</strong> Importuje sve rokove u kalendar aplikaciju</li>
               </ul>
-              <button class="close-btn" id="closeHelp">Zatvori</button>
+              <button class="close-help-btn" id="closeHelp">Zatvori</button>
             </div>
           </div>
         </div>
@@ -34,6 +34,7 @@
       <div class="side-overlay" id="sideOverlay"></div>
 
       <aside class="side-menu" id="sideMenu">
+        <button id="closeSideBtn" class="close-side-btn">×</button>
         <ul id="menuList">
           <!-- Pages will be inserted here dynamically -->
         </ul>
@@ -51,7 +52,7 @@
 
         <div id="list" class="selected-subjects-container"></div>
 
-        <button id="btnGenerate">Preuzmi</button>
+        <button id="btnGenerate">Import u kalendar</button>
       </div>
     </div>
     <footer>Community project by FET students</footer>
