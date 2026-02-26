@@ -183,6 +183,9 @@ const sideMenu = document.getElementById("sideMenu");
 const sideOverlay = document.getElementById("sideOverlay");
 const menuList = document.getElementById("menuList");
 
+const helpDropdown = document.getElementById("help-dropdown");
+const closeHelp = document.getElementById("closeHelp");
+
 let menuOpen = false;
 
 let otherPages = [];
@@ -218,6 +221,10 @@ function toggleMenu() {
   menuOpen = !menuOpen;
   sideMenu.classList.toggle("open", menuOpen);
   sideOverlay.classList.toggle("open", menuOpen);
+
+  if (menuOpen && helpDropdown.classList.contains("open")) {
+    helpDropdown.classList.remove("open");
+  }
 }
 
 menuOpenButton.addEventListener("click", toggleMenu);
@@ -227,3 +234,13 @@ sideOverlay.addEventListener("click", () => {
   sideMenu.classList.remove("open");
   sideOverlay.classList.remove("open");
 });
+
+helpBtn.addEventListener("click", () => {
+  helpDropdown.classList.toggle("open");
+});
+
+closeHelp.addEventListener("click", () => {
+  helpDropdown.classList.remove("open");
+});
+
+

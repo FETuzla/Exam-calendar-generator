@@ -40,14 +40,142 @@ body {
   flex: 1;
 }
 
-.nav-menu {
-  position: absolute;
-  left: 25px;
+.navbar {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  padding: 5px 20px;
+  align-self: stretch;
+}
+
+.nav-menu, .nav-links {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  justify-content: flex-end;
+}
+
+.nav-menu p {
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  margin:0;
   font-size: 32px;
+}
+
+.nav-menu p:hover {
+  color: #7673dc;
+}
+
+.nav-brand {
+  flex: 0 0 auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  white-space: nowrap;
+}
+
+.help-dropdown {
+  display: none;
+}
+
+.help-dropdown.open {
+  display: flex;
+}
+
+.help-container {
+  position: relative;
+}
+
+.nav-help-btn {
+  background: transparent;
+  border: 1px solid #6c6ab0;
+  color: white;
+  padding: 0px 12px;
+  border-radius: 16px;
+  font-size: 16px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-help-btn:hover {
+  background: #6c6ab0;
+}
+
+.desktop-text {
+  display: inline;
+}
+
+.mobile-text {
+  display: none;
+}
+
+.help-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 250px;
+  background: white;
+  color: #333;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.help-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+  text-align: left;
+}
+
+.help-dropdown h3 {
+  padding: 0;
+  margin: 0 0 5px 0;
+}
+
+.help-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: 8px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+}
+
+.help-dropdown.open {
+  display: flex;
+}
+
+.close-btn {
+  width: 100%;
+  background: #6c6ab0;
+  border: 1px solid #6c6ab0;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-.info,
+.close-btn:hover {
+  background: #7673dc;
+}
+
 h1,
 p {
   color: white;
@@ -144,6 +272,9 @@ button:active {
   overflow-x: hidden;
 
   padding: 5px;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 #list::-webkit-scrollbar {
@@ -212,8 +343,8 @@ footer {
   top: 0;
   left: 0;
   height: 100%;
-  width: 30%;
-  background: #1f1f2e;
+  width: 400px;
+  background: rgba(30,30,46,0.9);
   box-shadow: 5px 0 20px rgba(0, 0, 0, 0.4);
   transform: translateX(-100%);
   transition: transform 0.3s ease;
@@ -229,6 +360,7 @@ footer {
   list-style: none;
   padding: 0;
   margin: 0;
+  text-align: left;
 }
 
 .side-menu ul li {
@@ -298,18 +430,32 @@ footer {
   #nameDropdown option {
     font-size: 13px;
   }
-  button,
   .selected-item button {
     width: 50px;
-    padding: 2px;
+    padding: 5px;
+    font-size: 12px;
   }
+  .remove
   footer {
     padding: 1px;
     height: 12px;
     font-size: 10px;
   }
-
   .side-menu {
     width: 70%;
+  }
+  .nav-help-btn {
+    width: 32px;
+    padding: 0;
+    border-radius: 50%;
+  }
+  .desktop-text {
+    display: none;
+  }
+  .mobile-text {
+    display: inline;
+  }
+  .help-dropdown {
+    width: 85vw;
   }
 }
