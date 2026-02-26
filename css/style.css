@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 body {
@@ -13,16 +14,16 @@ body {
   min-height: 100vh;
 
   background-image:
-    -moz-linear-gradient(top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../assets/images/testbg.avif");
   background-image:
-    -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../assets/images/testbg.avif");
   background-image:
-    -ms-linear-gradient(top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../assets/images/testbg.avif");
   background-image:
-    linear-gradient(top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../assets/images/testbg.avif");
   background-attachment: fixed;
   background-position: center center;
@@ -31,7 +32,7 @@ body {
 }
 
 .main {
-  overflow: auto;
+  overflow: hidden;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -45,9 +46,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
   color: white;
-  padding: 5px 20px;
+  padding: 0 20px;
   align-self: stretch;
 }
 
@@ -162,7 +162,7 @@ body {
   display: flex;
 }
 
-.close-btn {
+.close-help-btn {
   width: 100%;
   background: #6c6ab0;
   border: 1px solid #6c6ab0;
@@ -172,7 +172,7 @@ body {
   cursor: pointer;
 }
 
-.close-btn:hover {
+.close-help-btn:hover {
   background: #7673dc;
 }
 
@@ -253,7 +253,7 @@ button:active {
 
 #btnGenerate {
   height: auto;
-  width: 100px;
+  width: 200px;
   font-size: 20px;
   padding: 5px;
   margin-top: 10px;
@@ -350,6 +350,34 @@ footer {
   transition: transform 0.3s ease;
   z-index: 999;
   padding: 70px 20px 20px 20px;
+  box-sizing: border-box;
+}
+
+.close-side-btn {
+  width: auto;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 36px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.2s ease;
+  font-weight: normal;
+}
+
+.close-side-btn:hover {
+  color: #ff0000;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+.close-side-btn:active {
+  transform: none;
+  background: transparent;
 }
 
 .side-menu.open {
